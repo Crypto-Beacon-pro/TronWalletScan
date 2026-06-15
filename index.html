@@ -485,7 +485,8 @@
       color:var(--red);
       box-shadow:0 0 16px rgba(255,0,19,0.12);
     }
-    .st-btn .st-ico { font-size:18px; }
+    .st-btn .st-ico { font-size:18px; display:flex; align-items:center; justify-content:center; }
+    .st-btn .st-ico svg { display:block; }
 
     /* Info preview */
     .rp-box {
@@ -942,25 +943,74 @@
         <input class="af-input" type="text" id="wallet-input" placeholder="Enter TRON wallet address (e.g. TKzxdSv2FZKQrEqkKVgp5DcwEXBEKMg2Ax)…" autocomplete="off" spellcheck="false"/>
       </div>
 
-      <!-- Scan type selector -->
+      <!-- Token selector -->
       <div class="scan-tabs">
-        <div class="st-btn active" data-scan="aml" onclick="selectScan(this)">
-          <span class="st-ico">🛡️</span><span>AML Scan</span>
+        <div class="st-btn active" data-scan="trx" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#ff0013" opacity="0.12"/>
+              <polygon points="16,4 28,26 4,26" fill="none" stroke="#ff0013" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="16" cy="20" r="3" fill="#ff0013"/>
+              <line x1="16" y1="6" x2="16" y2="17" stroke="#ff6b00" stroke-width="1.2" stroke-dasharray="2 2"/>
+            </svg>
+          </span>
+          <span>TRX</span>
         </div>
-        <div class="st-btn" data-scan="balance" onclick="selectScan(this)">
-          <span class="st-ico">💎</span><span>Balance</span>
+        <div class="st-btn" data-scan="usdt" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#26a17b" opacity="0.15"/>
+              <circle cx="16" cy="16" r="12" fill="none" stroke="#26a17b" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#26a17b">₮</text>
+            </svg>
+          </span>
+          <span>USDT</span>
         </div>
-        <div class="st-btn" data-scan="tx" onclick="selectScan(this)">
-          <span class="st-ico">⚡</span><span>Transactions</span>
+        <div class="st-btn" data-scan="btt" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#ff0080" opacity="0.12"/>
+              <circle cx="16" cy="16" r="11" fill="none" stroke="#ff0080" stroke-width="1.5"/>
+              <path d="M11 11 h6 a3 3 0 0 1 0 5 h-6 Z" fill="#ff0080" opacity="0.8"/>
+              <path d="M11 16 h7 a3 3 0 0 1 0 5 h-7 Z" fill="#ff0080"/>
+            </svg>
+          </span>
+          <span>BTT</span>
         </div>
-        <div class="st-btn" data-scan="trc20" onclick="selectScan(this)">
-          <span class="st-ico">🪙</span><span>TRC20 Tokens</span>
+        <div class="st-btn" data-scan="jst" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#ffcc00" opacity="0.12"/>
+              <circle cx="16" cy="16" r="11" fill="none" stroke="#ffcc00" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#ffcc00">J</text>
+            </svg>
+          </span>
+          <span>JST</span>
         </div>
-        <div class="st-btn" data-scan="risk" onclick="selectScan(this)">
-          <span class="st-ico">🎯</span><span>Risk Score</span>
+        <div class="st-btn" data-scan="sun" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#cc00ff" opacity="0.12"/>
+              <circle cx="16" cy="16" r="8" fill="none" stroke="#cc00ff" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="4" fill="#cc00ff" opacity="0.7"/>
+              <line x1="16" y1="4"  x2="16" y2="8"  stroke="#cc00ff" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="16" y2="28" stroke="#cc00ff" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="4"  y1="16" x2="8"  y2="16" stroke="#cc00ff" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="24" y1="16" x2="28" y2="16" stroke="#cc00ff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>SUN</span>
         </div>
-        <div class="st-btn" data-scan="sanctions" onclick="selectScan(this)">
-          <span class="st-ico">⛔</span><span>Sanctions</span>
+        <div class="st-btn" data-scan="more" onclick="selectScan(this)">
+          <span class="st-ico">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="16" fill="#ff6b00" opacity="0.10"/>
+              <circle cx="16" cy="16" r="11" fill="none" stroke="#ff6b00" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <line x1="16" y1="10" x2="16" y2="22" stroke="#ff6b00" stroke-width="2" stroke-linecap="round"/>
+              <line x1="10" y1="16" x2="22" y2="16" stroke="#ff6b00" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>More…</span>
         </div>
       </div>
 
